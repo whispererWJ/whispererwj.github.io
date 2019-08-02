@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Head />
+    <Body />
+    <Foot />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Head from './components/layout/head.vue'
+import Body from './components/layout/body.vue'
+import Foot from './components/layout/footer.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Head,Body,Foot
   }
 }
 </script>
 
 <style>
+@import "./assets/css/hack-theme.css";
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0;
+  margin: 0;
 }
 </style>
