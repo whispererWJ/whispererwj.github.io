@@ -35,9 +35,9 @@ export default {
       return marked(str);
     },
     getMd() {
-
+      const baseUrl =  window.location.href;
       window
-        .fetch(this.$props.url)
+        .fetch(`${baseUrl}${this.$props.url}`)
         .then((response) => response.text())
         .then((mdStr) => this.transMdIntoHtml(mdStr))
         .then((dirty) => this.clenMd(dirty))

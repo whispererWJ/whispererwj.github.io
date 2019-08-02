@@ -10,7 +10,7 @@ import MdShower from "../common/mdShower.vue";
 export default {
   name: "body",
   data: ()=>({
-    currentUrl: "/markdown/README.md"
+    currentUrl: "markdown/README.md"
   }),
   props: {},
   components: { MdShower }
