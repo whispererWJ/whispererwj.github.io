@@ -1,7 +1,10 @@
+/***
+ * markdown文件名称后缀说明
+ *   Imitation Structure  =>  IS =>  仿构
+ *   Development  =>   Dev   =>  开发
+ *   Summary   =>   Sum   =>  总结/心得
+ */
 
-//Imitation Structure  =>  IS =>  仿构
-//Development  =>   Dev   =>  开发
-//Summary   =>   Sum   =>  总结/心得
 
 export default [{
     "tag":"Home",
@@ -24,6 +27,9 @@ export default [{
         }, {
             "title": "监控对象属性值变化",
             "url": "markdown/js/watch_IS.md"
+        }, {
+            "title": "EventLoop事件循环机制",
+            "url": "markdown/js/eventLoop_Sum.md"
         }, {
             "title": "Promise 仿构",
             "url": "markdown/js/promise_IS.md"

@@ -2,10 +2,10 @@
   <div class="body">
     <div class="left">
       <ul class="menu">
-        <li v-for="(tag , index) in markdownList" :key="tag.tag">
-          <span :class="{haveChildren:tag.list}"  @click="showMark(tag,index)">{{tag.tag}}</span>
+        <li :class="{alone:!tag.list||tag.list.length===0,active:tag.url===currentUrl}" v-for="(tag , index) in markdownList" :key="tag.tag">
+          <span   @click="showMark(tag,index)">{{tag.tag}}</span>
           <ul v-if="tag.list" v-show="tag.isShowChildren">
-            <li v-for="markdown in tag.list" :key="markdown.url">
+            <li v-for="markdown in tag.list" :key="markdown.url" :class="{active:markdown.url===currentUrl}">
                 <span @click="showMark(markdown)">{{markdown.title}}</span>
             </li>
           </ul>
@@ -89,8 +89,11 @@ ul{
 li span{
   cursor: pointer;
 }
-.haveChildren{
+.active{
   color: #4caf50;
+}
+.alone{
+  list-style: none;
 }
 .menu{
   position: fixed;
