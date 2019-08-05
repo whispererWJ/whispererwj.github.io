@@ -1,23 +1,98 @@
 <template>
   <div class="body">
-    <MdShower v-bind:url="currentUrl" />
+    <div class="left">
+      <ul class="menu">
+        <li v-for="(tag , index) in markdownList" :key="tag.tag">
+          <span :class="{haveChildren:tag.list}"  @click="showMark(tag,index)">{{tag.tag}}</span>
+          <ul v-if="tag.list" v-show="tag.isShowChildren">
+            <li v-for="markdown in tag.list" :key="markdown.url">
+                <span @click="showMark(markdown)">{{markdown.title}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="middle"> 
+      <div v-show="isLoading" class="loading"></div>
+      <MdShower v-bind:url="currentUrl"  v-bind:onloading="showLoading" v-bind:onShow="hideLoading" />
+    </div>
+    <div class="right">  </div>
   </div>
 </template>
 
 <script>
 import MdShower from "../common/mdShower.vue";
+import markdownList  from "../config/markdownList.js";
+
 
 export default {
-  name: "body",
+  name: "app-body",
   data: ()=>({
-    currentUrl: "markdown/README.md"
+    currentUrl: "markdown/README.md",
+    markdownList: markdownList,
+    isLoading:false
   }),
   props: {},
-  components: { MdShower }
+  components: { MdShower },
+  methods: {
+    showLoading() {
+        this.isLoading=true;
+    },
+    hideLoading() {
+        this.isLoading=false;
+    },
+    showMark(markdown,index=0) {
+      if(markdown.url){
+        this.currentUrl = markdown.url;
+      }else{
+        this.markdownList[index].isShowChildren = !markdown.isShowChildren;
+      }
+    }
+  }
 };
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.body{
+  display: flex;
+  flex-flow: row nowrap;
+  padding-top: 64px;
+}
+.left{
+  flex: 0 0  300px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.middle{
+  flex: 1 1  1320px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.right{
+  flex: 0 0  300px;
+}
+.loading{
+  width: 100%;
+  height: 100%;
+  background: grey;
+  display: block;
+  position: absolute;
+}
+/* 统一左侧快捷菜单样式 */
+ul{
+  margin: 0px;
+  padding: 0 10px 0 30px;
+}
+li span{
+  cursor: pointer;
+}
+.haveChildren{
+  color: #4caf50;
+}
+.menu{
+  position: fixed;
+}
 </style>
