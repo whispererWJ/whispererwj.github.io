@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>whisperer's blog</title>
+    <script>
+      (function(d){
+        let base = d.createElement('base');
+        base.href = location.href;
+        d.head.append(base);
+      })(document)
+    </script>
   </head>
   <style type="text/css">
   /* 首屏样式   在页面js未加载渲染完成时  可以显示一些loading */
