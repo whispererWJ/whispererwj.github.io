@@ -1,6 +1,10 @@
 <template>
   <div class="body">
-    <div class="left">
+    <div class="view"> 
+      <div v-show="isLoading" class="loading"></div>
+      <MdShower v-bind:url="currentUrl"  v-bind:onloading="showLoading" v-bind:onShow="hideLoading" />
+    </div>
+    <div class="sideBar">
       <ul class="menu">
         <li :class="{alone:!tag.list||tag.list.length===0,active:tag.url===currentUrl}" v-for="(tag , index) in markdownList" :key="tag.tag">
           <span   @click="showMark(tag,index)">{{tag.tag}}</span>
@@ -12,11 +16,6 @@
         </li>
       </ul>
     </div>
-    <div class="middle"> 
-      <div v-show="isLoading" class="loading"></div>
-      <MdShower v-bind:url="currentUrl"  v-bind:onloading="showLoading" v-bind:onShow="hideLoading" />
-    </div>
-    <div class="right">  </div>
   </div>
 </template>
 
@@ -57,23 +56,32 @@ export default {
 <style scoped>
 .body{
   padding-top: 64px;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   position: relative;
   display: flex;
-}
-.left{
-  width: 20%;
-  padding: 10px;
+  height: 100%;
   box-sizing: border-box;
+  background: transparent;
 }
-.middle{
-  width: 60%;
-  padding: 10px;
+.view{
+  width: 80%;
+  padding: 10px 10px 10px 20px;
   box-sizing: border-box;
   position: relative;
+  z-index: 2;
+  height: 100%;
+  overflow: auto;
+  background: rgba(241, 251, 255, 0.75);
+  box-shadow: 0px -2px 10px 1px #9fa7ab;
 }
-.right{
+.sideBar{
   width: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+  background: #f1fbff;
+  box-shadow: 0px -2px 10px 1px #9fa7ab;
 }
 .loading{
   width: 100%;

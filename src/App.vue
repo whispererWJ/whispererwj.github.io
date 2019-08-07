@@ -3,6 +3,7 @@
     <AppHead />
     <AppBody />
     <AppFoot />
+    <Background  />
   </div>
 </template>
 
@@ -10,35 +11,40 @@
 import AppHead from "./components/layout/head.vue";
 import AppBody from "./components/layout/body.vue";
 import AppFoot from "./components/layout/footer.vue";
+import Background from "./components/layout/background.vue";
 
 export default {
   name: "app",
   components: {
     AppHead,
     AppBody,
-    AppFoot
+    AppFoot,
+    Background
   }
 };
 </script>
 
 <style>
-@import "./assets/css/hack-theme.css";
-#app {
+@import "./assets/css/misty-light-macos.css";
+
+html,body,#app {
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*自定义滚动条 */
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: rgba(217, 217, 217, 0.3);
+  background-color: #cce5ff;
 }
 ::-webkit-scrollbar-thumb {
-  background-color:#fff;
+  background-color:#cce5ff;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(217, 217, 217, 0.3);
-  background-color:rgb(26, 26, 26);
+  box-shadow: inset 0 0 6px #fff;
+  background-color:#fff;
 }
 </style>
