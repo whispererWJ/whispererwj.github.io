@@ -16,6 +16,7 @@
       width: 400px;
       height: 300px;
       margin: 300px auto 0 auto;
+      background: url(/blog/loading.gif);
     }
   </style>
   <body>
@@ -26,12 +27,6 @@
       <!-- 此处的innerHTML会在页面app加挂时被 替换掉  仅供首屏渲染使用 -->
       <div class="hold"></div>
     </div>
-    <script type="text/javascript">
-      (function (d) {
-        let bgText = location.hostname==='localhost'? "background: url(/loading.gif);": "background: url(/blog/loading.gif);";
-        d.querySelector('.hold').style.cssText = bgText;
-      })(document)
-    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>
