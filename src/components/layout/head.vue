@@ -1,6 +1,6 @@
 <template>
   <div class="head">
-    <!-- 结之已学,而得未知. -->
+    
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   name: 'app-head',
   props: {
    
+  },
+  data: ()=>{
+    return {
+      signature:'结之已学,而得未知.'
+    }
   }
 }
 </script>
@@ -16,7 +21,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .head{
-    background-color: #24292e;
+    background: #24292e url('../../assets/images/head_bg.jpg');
     color: hsla(0,0%,100%,.7);
     font-size: 14px;
     line-height: 1.5;

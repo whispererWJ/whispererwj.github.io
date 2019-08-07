@@ -47,7 +47,8 @@ export default {
       return marked(str);
     },
     getMd() {
-      const baseUrl =  window.location.href;
+      const location = window.location,
+            baseUrl =  `${location.origin}/${location.pathname.replace('/','')}/`;
       this.$props.onloading&&this.$props.onloading();
       window
         .fetch(`${baseUrl}${this.$props.url}`)
@@ -62,8 +63,6 @@ export default {
   }
 };
 </script>
-
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

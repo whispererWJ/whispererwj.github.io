@@ -56,23 +56,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .body{
-  display: flex;
-  flex-flow: row nowrap;
   padding-top: 64px;
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 .left{
-  flex: 0 0  300px;
+  width: 20%;
   padding: 10px;
   box-sizing: border-box;
 }
 .middle{
-  flex: 1 1  1320px;
+  width: 60%;
   padding: 10px;
   box-sizing: border-box;
   position: relative;
 }
 .right{
-  flex: 0 0  300px;
+  width: 20%;
 }
 .loading{
   width: 100%;
