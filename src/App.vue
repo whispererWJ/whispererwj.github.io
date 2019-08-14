@@ -1,7 +1,13 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 13:45:37
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 <template>
   <div id="app">
     <AppHead />
-    <AppBody />
+    <AppBody v-cloak />
     <AppFoot />
     <Background  />
   </div>
