@@ -12,12 +12,14 @@
 </template>
 
 <script>
+import { isBgChangeWithDate } from '../config/config.js';
+
 export default {
   name: 'background',
   props: {},
   data: ()=>{
     return {
-      weekNum:(new Date()).getDay()
+      weekNum:isBgChangeWithDate?(new Date()).getDay():3
     }
   },
   methods: {

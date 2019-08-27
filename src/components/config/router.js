@@ -13,7 +13,6 @@ const Test = () => import('../route/test.vue');
 
 const routes = [
     { path: '*', component: Markdown },
-    { path: '/markdown', component: Markdown },
     { path: '/test', component: Test }
 ];
 

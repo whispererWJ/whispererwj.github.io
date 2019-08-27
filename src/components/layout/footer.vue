@@ -6,7 +6,7 @@
  -->
 <template>
   <div class="footer">
-   
+        <!-- 尚未决定放什么  暂时先放着 -->
   </div>
 </template>
 

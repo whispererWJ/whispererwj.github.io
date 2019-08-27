@@ -8,8 +8,8 @@
   <div class="body">
      <transition
       name="my-animation"
-      enter-active-class="animated tada"
-      leave-active-class="animated bounceOutRight"
+      enter-active-class="animated zoomIn"
+      leave-active-class="animated zoomOut"
      >
         <routerView></routerView>
      </transition>
@@ -17,13 +17,9 @@
 </template>
 
 <script>
-import router from "../config/router.js";
-
-
 
 export default {
   name: "app-body",
-  router,
   data: () => ({
     isLoading: false
   }),
@@ -53,5 +49,6 @@ export default {
   height: 100%;
   box-sizing: border-box;
   background: transparent;
+  padding-top: 70px;
 }
 </style>

@@ -6,24 +6,16 @@
  -->
 <template>
   <div class="container" ref="con">
-        <h1>用于测试是否能够再浏览器中进行单元快照测试</h1>
-        <pre>{{result}}</pre>
-        <button @click="checkIsEqual">检查</button>
-        <div class="invisible" ref="invisible"></div>
+       <button @click="backToBlog">{{'\u8fd4\u56de\u535a\u5ba2'}}</button>
   </div>
 </template>
 
 <script>
 
-import html2canvas from 'html2canvas';
-
 export default {
   name: "app-body-test",
   data: ()=>({
-    old:'',
-    result:'',
-    list:['1','2',3],
-    cookie:''
+
   }),
   mounted() {
   },
@@ -35,25 +27,8 @@ export default {
     }
   },
   methods: {
-    checkIsEqual() {
-      let target = this.target;
-      if(!target){return;}
-       html2canvas(target).then(canvas => {
-        this.$refs.invisible.appendChild(canvas);
-        let newUrl = canvas.toDataURL();
-        this.$data.result = newUrl===this.$data.old?'两次截屏相同':'两次截屏不同';
-        this.$data.old = newUrl;
-        canvas.remove();
-      });
-    },
-    initOperation() {
-      let target = this.target;
-      if(!target){return;}
-      html2canvas(target).then(canvas => {
-        this.$refs.invisible.appendChild(canvas);
-        this.$data.old = canvas.toDataURL();
-        canvas.remove();
-      });
+    backToBlog() {
+      this.$router.push('/');
     }
   }
 };

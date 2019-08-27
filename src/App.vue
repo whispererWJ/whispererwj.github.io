@@ -18,9 +18,11 @@ import AppHead from "./components/layout/head.vue";
 import AppBody from "./components/layout/body.vue";
 import AppFoot from "./components/layout/footer.vue";
 import Background from "./components/layout/background.vue";
+import router from "./components/config/router.js";
 
 export default {
   name: "app",
+  router,
   components: {
     AppHead,
     AppBody,

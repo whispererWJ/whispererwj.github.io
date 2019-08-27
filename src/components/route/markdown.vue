@@ -73,7 +73,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container{
-  padding-top: 64px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -89,8 +88,8 @@ export default {
   position: relative;
   z-index: 2;
   height: 100%;
-  overflow: auto;
-  background: rgba(241, 251, 255, 0.75);
+  overflow: hidden auto;
+  background: rgba(241, 251, 255, 0.85);
   box-shadow: 0px -2px 10px 1px #9fa7ab;
 }
 .sideBar{
