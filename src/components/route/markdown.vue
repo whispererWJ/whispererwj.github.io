@@ -39,7 +39,7 @@ export default {
   }),
   beforeMount (){
       //取得上次缓存的markdown地址,并取得其父节点的id,使其父节点默认展开
-      let lastMarkDownUrl = localStorage.getItem('lastMarkDownUrl'),
+      let lastMarkDownUrl = localStorage.getItem('lastMarkDownUrl')||'',
           urlAry = lastMarkDownUrl.split('/'),
           pid = urlAry.length>2?urlAry[1]:'Home';
       this.markdownList.forEach((tag)=>{
