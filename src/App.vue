@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style>
-@import "./assets/css/misty-light-macos.css";
+@import "~@assets/css/misty-light-macos.css";
 
 html,body,#app {
   padding: 0;
@@ -39,14 +39,17 @@ html,body,#app {
   width: 100%;
   height: 100%;
 }
+textarea,code{
+  white-space: pre-wrap;
+}
 
 /*自定义滚动条 */
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: #cce5ff;
+  background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background-color:#cce5ff;
+  background-color:#2196f3;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-track {

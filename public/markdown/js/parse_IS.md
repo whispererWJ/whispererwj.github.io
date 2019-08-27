@@ -1,3 +1,9 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 16:51:36
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 ## parsejs解析函数 ##
 **仿照ng-options的解析原理**
 **根据表达式  解析对象并将解析得到的model和view值调用回调返回**
@@ -49,4 +55,4 @@
    c : 3
 ```
       
- 具体实现：[parsejs](https://github.com/whispererWJ/jsLab/tree/master/prase)
+ 具体实现：[parsejs](https://github.com/whispererWJ/laboratory/blob/master/js/browser/parse.js 'parsejs')

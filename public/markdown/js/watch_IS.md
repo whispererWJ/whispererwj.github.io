@@ -1,3 +1,9 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 16:51:36
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 ## **仿照火狐浏览器watch函数实现功能** ##
 目的：监听一个对象的属性值变化
 使用：
@@ -20,4 +26,4 @@
 ```
      		 将$watch$的返回值赋给原变量  obj = origin;     
 ```
-[watchjs的简单实现](https://github.com/whispererWJ/jsLab/blob/master/watchjs)
+[watchjs的简单实现](https://github.com/whispererWJ/laboratory/blob/master/js/browser/watchjs.js 'watchjs')

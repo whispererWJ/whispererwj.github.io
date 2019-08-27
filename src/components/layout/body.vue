@@ -6,7 +6,11 @@
  -->
 <template>
   <div class="body">
-     <transition name="slide">
+     <transition
+      name="my-animation"
+      enter-active-class="animated tada"
+      leave-active-class="animated bounceOutRight"
+     >
         <routerView></routerView>
      </transition>
   </div>
@@ -39,8 +43,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import "~@assets/css/animate.css";
+
 .body {
-  padding-top: 64px;
   width: 80%;
   margin: 0 auto;
   position: relative;

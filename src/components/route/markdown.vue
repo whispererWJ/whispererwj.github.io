@@ -12,7 +12,7 @@
     </div>
     <div class="sideBar">
       <ul class="menu">
-        <li :class="{alone:!tag.list||tag.list.length===0,active:tag.url===currentUrl}" v-for="(tag , index) in markdownList" :key="tag.tag">
+        <li :class="{alone:!tag.list||tag.list.length===0,active:tag.url===currentUrl}" v-for="(tag , index) in markdownList" :key="tag.id">
           <span   @click="showMark(tag,index)">{{tag.tag}}</span>
           <ul v-if="tag.list" v-show="tag.isShowChildren">
             <li v-for="markdown in tag.list" :key="markdown.url" :class="{active:markdown.url===currentUrl}">
@@ -27,7 +27,7 @@
 
 <script>
 import MdShower from "../common/mdShower.vue";
-import markdownList  from "../config/markdownList.js";
+import markdownList  from "../config/markdownList.js"; 
 
 
 export default {
@@ -37,6 +37,16 @@ export default {
     markdownList: markdownList,
     isLoading:false
   }),
+  beforeMount (){
+      //取得上次缓存的markdown地址,并取得其父节点的id,使其父节点默认展开
+      let lastMarkDownUrl = localStorage.getItem('lastMarkDownUrl'),
+          urlAry = lastMarkDownUrl.split('/'),
+          pid = urlAry.length>2?urlAry[1]:'Home';
+      this.markdownList.forEach((tag)=>{
+          tag.isShowChildren = tag.id===pid;
+      });
+      this.currentUrl = lastMarkDownUrl||"markdown/README.md";
+  },
   props: {},
   components: { MdShower },
   methods: {
@@ -49,6 +59,8 @@ export default {
     showMark(markdown,index=0) {
       if(markdown.url){
         this.currentUrl = markdown.url;
+        //存入缓存  以便恢复
+        localStorage.setItem('lastMarkDownUrl',markdown.url);
       }else{
         this.markdownList[index].isShowChildren = !markdown.isShowChildren;
       }
@@ -62,7 +74,7 @@ export default {
 <style scoped>
 .container{
   padding-top: 64px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   display: flex;
