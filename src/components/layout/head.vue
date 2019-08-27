@@ -65,7 +65,7 @@ export default {
     font-size: 14px;
     line-height: 1.5;
     padding: 16px;
-    z-index: 32;
+    z-index: 9;
     height: 32px;
     display: flex;
     position: fixed;
