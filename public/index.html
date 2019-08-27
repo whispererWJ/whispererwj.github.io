@@ -1,3 +1,9 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 13:45:37
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,16 +27,17 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      top:0;
+      z-index: 10;
     }
   </style>
   <body>
     <noscript>
       <strong>We're sorry but whisperer's blog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app">
-      <!-- 此处的innerHTML会在页面app加挂时被 替换掉  仅供首屏渲染使用 -->
-      <div class="hold"></div>
-    </div>
+    <!-- 此处的innerHTML会在页面app加挂时被隐藏  仅供首屏渲染成功之前使用 -->
+    <div class="hold"></div>
+    <div id="app"> </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

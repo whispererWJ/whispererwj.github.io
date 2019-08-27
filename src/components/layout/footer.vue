@@ -1,3 +1,9 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 14:46:57
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 <template>
   <div class="footer">
    
@@ -9,6 +15,9 @@ export default {
   name: 'app-footer',
   props: {
     
+  },
+  mounted (){
+      
   }
 }
 </script>
