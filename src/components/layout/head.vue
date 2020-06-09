@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {menuList} from '../config/config.js';
+import {menuList} from '@config/config.js';
 
 export default {
   name: 'app-head',

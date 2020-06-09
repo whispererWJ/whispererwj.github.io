@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import MdShower from "../common/mdShower.vue";
-import markdownList  from "../config/markdownList.js"; 
+import MdShower from "@common/mdShower.vue";
+import markdownList  from "@config/markdownList.js"; 
 
 
 export default {

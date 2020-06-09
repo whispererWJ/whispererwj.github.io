@@ -2,7 +2,7 @@
  * @Author: whisperer
  * @Date: 2019-08-02 16:46:56
  * @LastEditors: whisperer
- * @Description: 
+ * @Description:
  *             markdown文件名称后缀说明
  *                  Imitation Structure  =>  IS =>  仿构
  *                  Development  =>   Dev   =>  开发
@@ -56,12 +56,21 @@ export default [{
     "id": "node",
     "tag": "node学习",
     "isShowChildren": false,
-    "list": []
+    "list": [{
+        'title': "服务器文件监控自动构建服务",
+        "url": "markdown/node/autoBuild_Sum.md"
+    }, {
+        'title': "expressjs框架使用小计",
+        "url": "markdown/node/expressjs_Sum.md"
+    }]
 }, {
     "id": "tools",
     "tag": "工具与库",
     "isShowChildren": false,
-    "list": []
+    "list": [{
+        'title': "docker 使用小计",
+        "url": "markdown/tools/docker_Sum.md"
+    }]
 }, {
     "id": "debug",
     "tag": "前端调试",
@@ -80,5 +89,8 @@ export default [{
     "list": [{
         'title': "TestCafe使用学习",
         "url": "markdown/test/testCafe_Sum.md"
+    },{
+        'title': "前端UI自动化标识",
+        "url": "markdown/test/UIAutoTestAttr_Sum.md"
     }]
 }]

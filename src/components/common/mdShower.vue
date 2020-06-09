@@ -1,3 +1,9 @@
+<!--
+ * @Author: whisperer
+ * @Date: 2019-08-02 15:24:36
+ * @LastEditors: whisperer
+ * @Description: 
+ -->
 <template>
   <section v-html="cleanHtml"></section>
 </template>
@@ -38,14 +44,17 @@ export default {
     }
   },
   methods: {
+    //净化得到的html文本,防止xss等攻击
     cleanMd(dirty) {
       const win = (new JSDOM("")).defaultView,
         DOMPurify = createDOMPurify(win);
       return DOMPurify.sanitize(dirty);
     },
+    //将markdown文本转化成html文本
     transMdIntoHtml(str) {
       return marked(str);
     },
+    //获取markdown文本
     getMd() {
       const location = window.location,
             baseUrl =  `${location.origin}/${location.pathname.replace('/','')}/`;

@@ -12,7 +12,11 @@ module.exports = {
     "configureWebpack": {
         "resolve":{
             "alias":{
-                "@assets": path.join(__dirname, '/src/', 'assets')
+                "@assets": path.join(__dirname, '/src/', 'assets'),
+                "@components": path.join(__dirname, '/src/', 'components'),
+                "@common": path.join(__dirname, '/src/components/', 'common'),
+                "@config": path.join(__dirname, '/src/components/', 'config'),
+                "@route": path.join(__dirname, '/src/components/', 'route')
             }
         }
     }

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { isBgChangeWithDate } from '../config/config.js';
+import { isBgChangeWithDate } from '@config/config.js';
 
 export default {
   name: 'background',
