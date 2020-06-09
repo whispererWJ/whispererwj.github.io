@@ -1,11 +1,11 @@
 <!--
  * @Author: whisperer
  * @Date: 2020-01-09 08:35:16
- * @LastEditors  : whisperer
- * @LastEditTime : 2020-01-09 09:18:17
+ * @LastEditors: whisperer
+ * @LastEditTime: 2020-06-09 13:31:07
  * @Description: file content
  -->
-# Cesium 3D建模库使用总结
+# Cesiumjs使用总结
 
 ##  Viewer  视图
 ```
@@ -32,5 +32,14 @@
 说明: 此方法实例化一个Cesium定义的实体对象
 参数: 1.options  生成这个实体需要的配置
 链接: https://cesium.com/docs/cesiumjs-ref-doc/Entity.html
-类比: 歌剧中
+类比: 歌剧中布置道具
+```
+
+##  Model 实体
+```
+使用: new Cesium.Model(options)
+说明: 此方法实例化一个Cesium定义的实体对象
+参数: 1.options  生成这个实体需要的配置
+链接: https://cesium.com/docs/cesiumjs-ref-doc/Model.html
+类比: 歌剧中演员
 ```

@@ -70,6 +70,9 @@ export default [{
     "list": [{
         'title': "docker 使用小计",
         "url": "markdown/tools/docker_Sum.md"
+    },{
+        'title': "cesium 使用小计",
+        "url": "markdown/tools/cesium_Sum.md"
     }]
 }, {
     "id": "debug",
